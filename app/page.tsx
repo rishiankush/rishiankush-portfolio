@@ -76,7 +76,9 @@ export default function Home() {
               className="rounded-full border-4 border-white dark:border-zinc-800 shadow-lg"
             />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold">Hi, I'm Ankush 👋</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Hi, I&apos;m Ankush 👋
+          </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             🚀 Expert React Native Developer | 10+ Years of Experience |
             Full-stack Architect | TVOS Specialist
@@ -102,28 +104,29 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
           <div className="prose dark:prose-invert max-w-none text-lg">
             <p>
-              👋 I'm a passionate and experienced mobile engineer specializing
-              in <strong>React Native</strong>, <strong>Expo</strong>, and{" "}
+              👋 I&apos;m a passionate and experienced mobile engineer
+              specializing in <strong>React Native</strong>,{" "}
+              <strong>Expo</strong>, and{" "}
               <strong>cross-platform development</strong> for iOS, Android, and
               Smart TV (tvOS). With over <strong>10 years in tech</strong> and
               8+ years building mobile-first experiences, I create sleek,
               scalable, and high-performance apps users love.
             </p>
             <p>
-              🛠️ I've led and built production-grade solutions across FinTech,
-              Healthcare, E-commerce, IoT, and Streaming. From custom DRM-based
-              KYC tools to Smart TV integrations, I blend deep technical skill
-              with business strategy to drive results.
+              🛠️ I&apos;ve led and built production-grade solutions across
+              FinTech, Healthcare, E-commerce, IoT, and Streaming. From custom
+              DRM-based KYC tools to Smart TV integrations, I blend deep
+              technical skill with business strategy to drive results.
             </p>
             <p>
-              🚀 I’ve worked with startups and global enterprises
+              🚀 I&apos;ve worked with startups and global enterprises
               alike—delivering polished products from scratch or helping scale
               existing systems. I believe in ownership, automation, test-driven
               development, and delivering impact, not just code.
             </p>
             <p>
-              💬 Let’s collaborate if you're building something exciting — I
-              love helping products go from idea 💡 to shipped 🚀.
+              💬 Let&rsquo;s collaborate if you&rsquo;re building something
+              exciting — I love helping products go from idea 💡 to shipped 🚀.
             </p>
           </div>
         </section>
