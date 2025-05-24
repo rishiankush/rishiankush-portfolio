@@ -1,100 +1,225 @@
+"use client";
+
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  useEffect(() => {
+    document.title = "Ankush Rishi | React Native Expert";
+  }, []);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const projects = [
+    {
+      title: "OnAir App",
+      desc: "Live event streaming app with Chromecast, Bitmovin analytics, and custom video SDKs.",
+    },
+    {
+      title: "Afriex",
+      desc: "FinTech money transfer platform. Built full-stack features with Node.js, GraphQL, React Native, and integrated end-to-end tests using Detox.",
+    },
+    {
+      title: "Ferns N Petals",
+      desc: "Handled mobile development for India’s top gifting platform. Built features, fixed critical issues, and led a 10-engineer team.",
+    },
+    {
+      title: "Toffee Insurance App",
+      desc: "Built byte-sized insurance purchase experience with full identity verification using custom camera/KYC tools.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-white dark:from-zinc-900 dark:to-black text-gray-900 dark:text-white">
+      {/* Navbar */}
+      <header className="fixed top-0 w-full backdrop-blur-md border-b border-gray-200 dark:border-zinc-800 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-lg font-bold">Ankush Rishi</h1>
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a href="#about" className="hover:underline">
+              About
+            </a>
+            <a href="#tech" className="hover:underline">
+              Tech Stack
+            </a>
+            <a href="#projects" className="hover:underline">
+              Projects
+            </a>
+            <a href="#contact" className="hover:underline">
+              Contact
+            </a>
+          </nav>
         </div>
+      </header>
+
+      <main className="pt-28 px-4 md:px-12 max-w-6xl mx-auto space-y-32">
+        {/* Hero */}
+        <motion.section
+          className="text-center space-y-6"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex justify-center">
+            <Image
+              src="/profile-pic.png"
+              alt="Ankush Rishi"
+              width={128}
+              height={128}
+              className="rounded-full border-4 border-white dark:border-zinc-800 shadow-lg"
+            />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold">Hi, I'm Ankush 👋</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            🚀 Expert React Native Developer | 10+ Years of Experience |
+            Full-stack Architect | TVOS Specialist
+          </p>
+          <div className="flex justify-center gap-4">
+            <Link
+              href="/Ankush_Rishi_RN.pdf"
+              className="bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700 transition"
+            >
+              📄 Download Resume
+            </Link>
+            <button
+              onClick={scrollToContact}
+              className="border border-gray-400 dark:border-gray-600 px-5 py-2 rounded hover:bg-gray-100 dark:hover:bg-zinc-700 transition"
+            >
+              ✉️ Let’s Connect
+            </button>
+          </div>
+        </motion.section>
+
+        {/* About */}
+        <section id="about">
+          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <div className="prose dark:prose-invert max-w-none text-lg">
+            <p>
+              👋 I'm a passionate and experienced mobile engineer specializing
+              in <strong>React Native</strong>, <strong>Expo</strong>, and{" "}
+              <strong>cross-platform development</strong> for iOS, Android, and
+              Smart TV (tvOS). With over <strong>10 years in tech</strong> and
+              8+ years building mobile-first experiences, I create sleek,
+              scalable, and high-performance apps users love.
+            </p>
+            <p>
+              🛠️ I've led and built production-grade solutions across FinTech,
+              Healthcare, E-commerce, IoT, and Streaming. From custom DRM-based
+              KYC tools to Smart TV integrations, I blend deep technical skill
+              with business strategy to drive results.
+            </p>
+            <p>
+              🚀 I’ve worked with startups and global enterprises
+              alike—delivering polished products from scratch or helping scale
+              existing systems. I believe in ownership, automation, test-driven
+              development, and delivering impact, not just code.
+            </p>
+            <p>
+              💬 Let’s collaborate if you're building something exciting — I
+              love helping products go from idea 💡 to shipped 🚀.
+            </p>
+          </div>
+        </section>
+
+        {/* Tech Stack */}
+        <section id="tech">
+          <h2 className="text-3xl font-bold mb-4">Tech Stack</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "React Native",
+              "Expo",
+              "Redux",
+              "Zustand",
+              "GraphQL",
+              "Firebase",
+              "Node.js",
+              "TypeScript",
+              "Tailwind CSS",
+              "Fastlane",
+              "Detox",
+              "Docker",
+              "Git",
+              "MongoDB",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="bg-zinc-100 dark:bg-zinc-700 px-4 py-1 text-sm rounded-full shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section id="projects">
+          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {projects.map((proj) => (
+              <div
+                key={proj.title}
+                className="p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md hover:shadow-lg transition"
+              >
+                <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {proj.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact">
+          <h2 className="text-3xl font-bold mb-4">Contact</h2>
+          <p className="text-lg">
+            📬 Email me at{" "}
+            <a
+              className="underline text-blue-500"
+              href="mailto:ankushrishi5@gmail.com"
+            >
+              ankushrishi5@gmail.com
+            </a>
+            <br />
+            🔗 Connect on{" "}
+            <a
+              className="underline text-blue-500"
+              href="https://www.linkedin.com/in/ankush-r-a3056675/"
+            >
+              LinkedIn
+            </a>
+            <br />
+            💻 Check out my{" "}
+            <a
+              className="underline text-blue-500"
+              href="https://github.com/rishiankush"
+            >
+              GitHub
+            </a>
+            <br />
+            🧠 See my answers on{" "}
+            <a
+              className="underline text-blue-500"
+              href="https://stackoverflow.com/users/5151047/ankush-rishi"
+            >
+              Stack Overflow
+            </a>
+          </p>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="mt-32 py-6 text-center border-t border-gray-200 dark:border-zinc-800">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          © {new Date().getFullYear()} Ankush Rishi. All rights reserved.
+        </p>
       </footer>
     </div>
   );
